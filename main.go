@@ -12,5 +12,8 @@ func main() {
 		fmt.Fprintf(w, "hello the current time is %s", time.Now())
 	})
 	log.Println("Start server on http://localhost:3000")
-	http.ListenAndServe(":3000", nil)
+	err := http.ListenAndServe(":3000", nil)
+	if err != nil {
+		return
+	}
 }
